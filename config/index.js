@@ -3,11 +3,11 @@ const COLOR_LEVEL = require('../src/ColorLevel')
 
 module.exports = {
 	name: 'index',
-	url: 'https://www.baidu.com',
+	url: 'https://www.hsuan.com',
 	template: path.resolve(__dirname, '../build/pc.html'), 
 	output: {
 		filepath: path.resolve(__dirname, '../dist'),
-		injectSelector: '#app'  
+		injectSelector: '#app'
 	},
 	px2rem: 50,
 	device: 'pc',

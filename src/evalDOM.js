@@ -37,8 +37,8 @@ module.exports = opts => {
           this.options[key] = options[key]
         }
       })
-      this.unit = 'pc' !== this.options.device&&this.options.px2rem ? 'rem' : 'px'
-      this.px2rem = ('pc' !== this.options.device && this.options.px2rem) || 1
+      this.unit = this.options.px2rem>0 ? 'rem' : 'px'
+      this.px2rem = this.options.px2rem || 1
       this.rootNode = (options.rootNode && 'string' === typeof options.rootNode && document.querySelector(options.rootNode)) || document.body
     }
     parseNode(nodes, layer=1){

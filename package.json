@@ -9,12 +9,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://git.3k.com/web/FE/generate-skeleton-page.git"
+    "url": "https://github.com/hsuna/generate-skeleton-page.git"
   },
   "author": "Hsuna",
   "license": "ISC",
   "devDependencies": {
     "cheerio": "^1.0.0-rc.2",
+    "merge": "^1.2.1",
     "puppeteer": "^1.13.0"
   }
 }
