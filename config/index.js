@@ -2,27 +2,32 @@ const path = require('path')
 const COLOR_LEVEL = require('../src/ColorLevel')
 
 module.exports = {
-	name: 'index',
-	url: 'https://www.hsuan.com',
-	template: path.resolve(__dirname, '../build/pc.html'), 
+	puppeteer: {
+		device: 'pc',
+		page: {
+			url: 'http://www.hsuna.com/',
+		},
+		//delay: 5000,
+	},
 	output: {
+		name: 'index',
+		template: path.resolve(__dirname, '../build/pc.html'), 
 		filepath: path.resolve(__dirname, '../dist'),
 		injectSelector: '#app'
 	},
-	px2rem: 50,
-	device: 'pc',
-	//rootNode: '#app',
-	parseNode(node, layer, generate){
-		/* if(1 === node.nodeType){
-			if(node.classList.contains('swiper-container')){
-				let rect = node.getBoundingClientRect().toJSON() || {}
-				generate.call({
-				  zIndex: layer,
-				  ...rect,
-				  background: COLOR_LEVEL.LEVEL_3
-				})
-				return false;
-			}
-		} */
+	evalParams: {
+		//rootNode: '#app',
+		//px2rem: 0,
+		parseNode(node, styles, generate){
+			/* if(1 === node.nodeType){
+				if(node.classList.contains('swiper-container')){
+					generate.call({
+					  ...styles,
+					  background: COLOR_LEVEL.LEVEL_3
+					})
+					return false;
+				}
+			} */
+		}
 	}
 }
