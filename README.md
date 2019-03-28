@@ -4,30 +4,49 @@
 > 作者：Hsuna <br/>
 > 时间：2019/03/25
 
+### 一、项目结构
 
+```
+./
+├─ config
+│  └─ index.js         # 配置信息
+│
+├─ src                       
+│  ├─ ColorLevel.js    # 颜色分层表
+│  ├─ evalDOM.js       # 运行时解析文件
+│  ├─ pp.js            # puppeteer集成处理
+│  └─ index.js         # 配置执行文件
+│
+└─ start.js            # 启动文件
+```
 
-name //
-url  // 待生成骨架屏页面的地址
-filepath   // 
-injectSelector // 生成的骨架屏插入页面的节点
+### 二、运行
+```
+# 安装依赖
+npm install
 
+# 生成骨架屏
+npm start
+```
 
-> 配置参数
+* 配置修改：`config/index.js`
 
-| 参数 | 说明 | 类型 | 可选值 | 默认值 |
-|----|----|----|----|----|
-| puppeteer |  | string | pc/mobile/ipad| pc |
-| output |  | string | pc/mobile/ipad| pc |
-| evalParams |  | string | pc/mobile/ipad| pc |
+### 三、具体参数配置
+
+| 参数 | 说明 | 类型 |
+|----|----|----|
+| puppeteer | 页面操作配置 | obejct |
+| output | 输出配置 | obejct |
+| evalParams | 运行时配置 | obejct |
 
 - puppeteer
 
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |
 |----|----|----|----|----|
-| device |  | string | pc/mobile/ipad| pc |
-| page |  | object | — | — |
-| page.url |  | string | — | — |
-| page.extraHTTPHeaders |  | object | — | null |
+| device | 设备类型 | string | pc/mobile/ipad| pc |
+| page | 参数如下 | object | — | — |
+| page.url | 原页面访问地址 | string | — | — |
+| page.extraHTTPHeaders | headers设置 | object | — | null |
 | launch | 同puppeteer.launch | object | — | { headless: true } |
 | delay | 毫秒，延迟获取页面内容 | number | — | 0 |
 
