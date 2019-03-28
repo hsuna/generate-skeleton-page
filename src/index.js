@@ -21,7 +21,7 @@ const DEFAULT_OPTIONS = {
     delay: 0,
   },
   output: {
-    name: '',
+    name: 'index',
     template: '',
     filepath: '',
     injectSelector: '#app',
